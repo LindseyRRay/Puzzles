@@ -40,17 +40,27 @@ def max_lst(numbers, largest_far=0):
 	else:
 		return max_lst(numbers[1:], largest_far)
 
-
-print("Answer is %s"%nonback_find_last([1,2,3], 3))
-
-print("Answer is %s"%nonback_find_last([1,2,3], 10))
-
-print("Answer is %s"%nonback_find_last([1, 2, 5, 4, 6, 5, 2, 7], 5))
-
-print("Sum is %s"%find_sum([1, 2, 3, 4, 5]))
-print("Sum is %s"%find_sum([]))
+def flatten_lst(lst, final_lst=list()):
+	for element in lst:
+		if isinstance(element, list):
+			flatten_lst(element, final_lst)
+		else:
+			final_lst.append(element)
+	return final_lst
 
 
-print("Max is %s"%max_lst([7, 6, 10, 22, 15]))
-print("Max is %s"%max_lst([]))
-print("Max is %s"%max_lst([7, 6, 5, 4, 10, 11]))
+
+print("Answer is %s"%flatten_lst([1,2,[4,4], 5]))
+
+
+# print("Answer is %s"%nonback_find_last([1,2,3], 10))
+
+# print("Answer is %s"%nonback_find_last([1, 2, 5, 4, 6, 5, 2, 7], 5))
+
+# print("Sum is %s"%find_sum([1, 2, 3, 4, 5]))
+# print("Sum is %s"%find_sum([]))
+
+
+# print("Max is %s"%max_lst([7, 6, 10, 22, 15]))
+# print("Max is %s"%max_lst([]))
+# print("Max is %s"%max_lst([7, 6, 5, 4, 10, 11]))
