@@ -45,7 +45,7 @@ def sieve_atkins(limit):
 				primes[mult] = False
 				
 
-	return len([p for p in primes if p==True]), primes
+	return len([p for p in primes if p==True])
 	
 
 
